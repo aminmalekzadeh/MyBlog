@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
     if (doLogin($username,$password)) {
-            header('Location: Panel/index.php');
+            header('Location: ../Panel/index.php');
             die;
         }else{
         e("شما با خطا مواجه شدید.","alert-danger");
