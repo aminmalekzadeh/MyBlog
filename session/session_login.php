@@ -1,6 +1,9 @@
 <?php
 require_once '../functions.php';
-include_once '../section/header.php';
+include_once '../section/head.php';
+require 'isset_session.php';
+$issession = new isset_session();
+$issession->IsSession();
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

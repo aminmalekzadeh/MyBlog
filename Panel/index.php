@@ -19,13 +19,16 @@
 
 <body>
 
+
+
+
 <div class="d-flex" id="wrapper">
 
     <!-- Sidebar -->
     <div class="bg-dark float-right text-white border-right" id="sidebar-wrapper">
         <div class="sidebar-heading">Panel Admin</div>
         <div class="list-group list-group-flush">
-            <a href="#" class="list-group-item list-group-item-action text-white bg-dark">Send
+            <a href="index.php" class="list-group-item list-group-item-action text-white bg-dark">Send
                 Post</a>
         </div>
         <div class="list-group list-group-flush">
@@ -67,6 +70,10 @@
         </nav>
 
         <?php
+        require 'isset_session.php';
+        $issession = new isset_session();
+        $issession->IsSession();
+
         $title = $_POST['title'];
         $description = $_POST['description'];
         include_once '../functions.php';

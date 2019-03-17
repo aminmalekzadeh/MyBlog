@@ -1,5 +1,4 @@
 <?php
-
 class isset_session
 {
 

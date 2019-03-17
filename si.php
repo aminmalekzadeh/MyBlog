@@ -1,7 +1,7 @@
 <?php
 include 'functions.php';
 require_once 'Panel/config.php';
-include 'section/header.php';
+include 'section/head.php';
 
 $FullName = $_POST['FullName'];
 $email = $_POST['email'];

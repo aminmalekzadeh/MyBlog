@@ -6,3 +6,5 @@ session_destroy();
 
 header('location:session/Login.view.php');
 die;
+
+?>
