@@ -70,10 +70,6 @@
         </nav>
 
         <?php
-        require 'isset_session.php';
-        $issession = new isset_session();
-        $issession->IsSession();
-
         $title = $_POST['title'];
         $description = $_POST['description'];
         include_once '../functions.php';
@@ -115,12 +111,10 @@
 
         </div>
     </div>
-    <!-- /#page-content-wrapper -->
+
 
 </div>
-<!-- /#wrapper -->
 
-<!-- Bootstrap core JavaScript -->
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 

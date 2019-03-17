@@ -7,7 +7,7 @@ class isset_session
         session_start();
 
         if (!isset($_SESSION['username'])) {
-            header('location:session/Login.view.php');
+            header('Location: index.php');
             die;
         }
         return 0;

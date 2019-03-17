@@ -1,5 +1,6 @@
 <?php
 require_once 'Panel/config.php';
+require_once 'section/head.php';
 function e($text, $type = "alert-info")
 {
     echo "<div class=\"container\">";
@@ -39,8 +40,6 @@ function getUser($username, $fields = '*')
     if (count($Blogger) > 0) {
         return $Blogger;
     }
-    return false;
-
     return false;
 }
 function doLogin($username, $password)

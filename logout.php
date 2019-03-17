@@ -4,7 +4,7 @@ session_start();
 
 session_destroy();
 
-header('location:session/Login.view.php');
+header('Location: session/Login.view.php');
 die;
 
 ?>
