@@ -19,9 +19,6 @@
 
 <body>
 
-
-
-
 <div class="d-flex" id="wrapper">
 
     <!-- Sidebar -->
@@ -32,7 +29,8 @@
                 Post</a>
         </div>
         <div class="list-group list-group-flush">
-            <a href="../logout.php" class="list-group-item list-group-item-action text-white bg-dark">Send
+            <a href="../logout.php"
+               class="list-group-item list-group-item-action text-white bg-dark">Send
                 logout</a>
         </div>
     </div>
@@ -74,6 +72,7 @@
         $description = $_POST['description'];
         include_once '../functions.php';
         require 'config.php';
+        IsSession();
         try {
             $myPDO = new PDO("mysql:host=$host;dbname=$namedb", $username, $password);
             $query = "SELECT COUNT(*) from posts where Title=:title and Description=:description";
@@ -81,19 +80,19 @@
             $countResult->bindParam(':title', $title);
             $countResult->bindParam(":description", $description);
             $countResult->execute();
-         $count =  $countResult->fetch()[0] ;
-            if($count==0){
-                    $result = $myPDO->prepare("INSERT INTO posts(Title, Description) VALUES (:title,:description)");
-                    $result->bindParam(':title', $title);
-                    $result->bindParam(":description", $description);
-                    if($result->execute()){
-                        e("Successfuly insert data to Database $namedb", "alert-success");
-                    }
+            $count = $countResult->fetch()[0];
+            if ($count == 0) {
+                $result = $myPDO->prepare("INSERT INTO posts(Title, Description) VALUES (:title,:description)");
+                $result->bindParam(':title', $title);
+                $result->bindParam(":description", $description);
+                if ($result->execute()) {
+                    e("Successfuly insert data to Database $namedb", "alert-success");
+                }
             }
         } catch (PDOException $e) {
             e("Error: " . $e->getMessage(), "alert-danger");
         }
-                ?>
+        ?>
 
 
         <div class="container-fluid">

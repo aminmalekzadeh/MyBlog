@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header('Location: ../Panel/index.php');
             die;
         }else{
-        e("شما با خطا مواجه شدید.","alert-danger");
+        e("رمزعبور یا نام کاربری اشتباه است","alert-danger");
     }
 
 }

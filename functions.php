@@ -9,6 +9,7 @@ function e($text, $type = "alert-info")
     echo "</div>";
     echo "</div>";
 }
+
 function getpost()
 {
     global $mypdo;
@@ -25,15 +26,17 @@ function getpost()
         echo "</div>";
     }
 }
+
 function getHash($str)
 {
     $saltStr = 'l0calhost';
     $hash = sha1($saltStr . md5($str . $saltStr));
     return $hash;
 }
+
 function getUser($username, $fields = '*')
 {
-    global $username,$mypdo;
+    global $username, $mypdo;
     $statement = $mypdo->prepare("SELECT $fields from users where username=?");
     $statement->execute(array($username));
     $Blogger = $statement->fetch(PDO::FETCH_ASSOC);
@@ -42,6 +45,7 @@ function getUser($username, $fields = '*')
     }
     return false;
 }
+
 function doLogin($username, $password)
 {
     $user = getUser($username);
@@ -55,4 +59,16 @@ function doLogin($username, $password)
     }
     return false;
 }
+
+function IsSession()
+{
+    session_start();
+
+    if (!isset($_SESSION['login'])) {
+        header('Location: ../session/Login.view.php');
+        die;
+    }
+    return 0;
+}
+
 ?>

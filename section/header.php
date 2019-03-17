@@ -1,4 +1,4 @@
-<header class="navbar navbar-expand-sm bg-dark navbar-dark shadow fixed-top">
+<header class="navbar shadow navbar-expand-sm bg-dark navbar-dark fixed-top">
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
