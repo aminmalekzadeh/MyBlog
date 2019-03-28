@@ -2,5 +2,5 @@
 $host = 'localhost';
 $namedb = 'blog';
 $username = 'root';
-$password = '1';
+$password = '';
 $mypdo = new PDO("mysql:host=$host;dbname=$namedb", $username, $password);
